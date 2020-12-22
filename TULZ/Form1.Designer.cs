@@ -33,9 +33,14 @@ namespace TULZ
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTimer = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.panelTimerSubMenu = new System.Windows.Forms.Panel();
+            this.btnTimer1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panelTimerSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -68,13 +73,29 @@ namespace TULZ
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.panelTimerSubMenu);
+            this.panel1.Controls.Add(this.btnTimer);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(218, 544);
             this.panel1.TabIndex = 6;
+            // 
+            // btnTimer
+            // 
+            this.btnTimer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTimer.FlatAppearance.BorderSize = 0;
+            this.btnTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimer.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnTimer.Location = new System.Drawing.Point(0, 150);
+            this.btnTimer.Name = "btnTimer";
+            this.btnTimer.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnTimer.Size = new System.Drawing.Size(218, 34);
+            this.btnTimer.TabIndex = 1;
+            this.btnTimer.Text = "Timer";
+            this.btnTimer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimer.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -84,15 +105,64 @@ namespace TULZ
             this.panel2.Size = new System.Drawing.Size(218, 150);
             this.panel2.TabIndex = 0;
             // 
-            // button4
+            // panelTimerSubMenu
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(0, 150);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(218, 34);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.panelTimerSubMenu.Controls.Add(this.button6);
+            this.panelTimerSubMenu.Controls.Add(this.button5);
+            this.panelTimerSubMenu.Controls.Add(this.btnTimer1);
+            this.panelTimerSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTimerSubMenu.Location = new System.Drawing.Point(0, 184);
+            this.panelTimerSubMenu.Name = "panelTimerSubMenu";
+            this.panelTimerSubMenu.Size = new System.Drawing.Size(218, 109);
+            this.panelTimerSubMenu.TabIndex = 2;
+            // 
+            // btnTimer1
+            // 
+            this.btnTimer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.btnTimer1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTimer1.FlatAppearance.BorderSize = 0;
+            this.btnTimer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimer1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnTimer1.Location = new System.Drawing.Point(0, 0);
+            this.btnTimer1.Name = "btnTimer1";
+            this.btnTimer1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnTimer1.Size = new System.Drawing.Size(218, 34);
+            this.btnTimer1.TabIndex = 0;
+            this.btnTimer1.Text = "Timer1";
+            this.btnTimer1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimer1.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button5.Location = new System.Drawing.Point(0, 34);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(218, 34);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Timer2";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button6.Location = new System.Drawing.Point(0, 68);
+            this.button6.Name = "button6";
+            this.button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button6.Size = new System.Drawing.Size(218, 34);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Timer3";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // panelSideMenu
             // 
@@ -106,6 +176,7 @@ namespace TULZ
             this.Name = "panelSideMenu";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
+            this.panelTimerSubMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -117,7 +188,11 @@ namespace TULZ
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnTimer;
+        private System.Windows.Forms.Panel panelTimerSubMenu;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnTimer1;
     }
 }
 
