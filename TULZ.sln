@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TULZ", "TULZ\TULZ.csproj", "{EB2D9EC9-3E32-4B33-A968-BF34C789A505}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TULZ", "TULZ\TULZ.csproj", "{EB2D9EC9-3E32-4B33-A968-BF34C789A505}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalTimers", "IntervalTimers\IntervalTimers.csproj", "{EB7DB8FA-E1F6-4F80-990E-F7CCD9275624}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EB2D9EC9-3E32-4B33-A968-BF34C789A505}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB2D9EC9-3E32-4B33-A968-BF34C789A505}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB2D9EC9-3E32-4B33-A968-BF34C789A505}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB7DB8FA-E1F6-4F80-990E-F7CCD9275624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB7DB8FA-E1F6-4F80-990E-F7CCD9275624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB7DB8FA-E1F6-4F80-990E-F7CCD9275624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB7DB8FA-E1F6-4F80-990E-F7CCD9275624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
