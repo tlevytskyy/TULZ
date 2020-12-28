@@ -57,5 +57,13 @@ namespace IntervalTimers
         {
             flpTimers.Controls.Clear();
         }
+
+        private void flpTimers_SizeChanged(object sender, EventArgs e)
+        {
+            foreach(TimerControl c in flpTimers.Controls)
+            {
+                c.Size = new Size(flpTimers.Size.Width - 23, c.Size.Height);
+            }
+        }
     }
 }

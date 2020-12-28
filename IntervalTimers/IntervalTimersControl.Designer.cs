@@ -144,6 +144,7 @@ namespace IntervalTimers
             this.flpTimers.Name = "flpTimers";
             this.flpTimers.Size = new System.Drawing.Size(426, 164);
             this.flpTimers.TabIndex = 3;
+            this.flpTimers.SizeChanged += new System.EventHandler(this.flpTimers_SizeChanged);
             // 
             // panel1
             // 

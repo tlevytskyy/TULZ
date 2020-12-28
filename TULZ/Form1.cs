@@ -101,6 +101,14 @@ namespace TULZ
             _interval.Dock = DockStyle.Fill;
             panelMain.Controls.Add(_interval);
         }
+
+        private void panelTopPanel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
         //----------------------------------------------------------------------------------------------------
     }
 }
