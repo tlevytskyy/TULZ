@@ -12,11 +12,9 @@ namespace IntervalTimers
 {
     public partial class IntervalTimersControl : UserControl
     {
-        private List<TimerControl> _timers;
         public IntervalTimersControl()
         {
             InitializeComponent();
-            _timers = new List<TimerControl>();
         }
         private void btnAddTimer_Click(object sender, EventArgs e)
         {
@@ -25,11 +23,39 @@ namespace IntervalTimers
             temptimer.E_CloseControl += new Action<TimerControl>(EH_RemoveTimer);        //set closing event on control
             temptimer.Size = new Size(flpTimers.Size.Width - 23, temptimer.Size.Height); //set width to fill panel
             flpTimers.Controls.Add(temptimer);                                           //add control to panel
-            _timers.Add(temptimer);
         }
         private void EH_RemoveTimer(TimerControl timer)
         {
             flpTimers.Controls.Remove(timer);
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            foreach(TimerControl t in flpTimers.Controls)
+            {
+                t.Start();
+            }
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            foreach (TimerControl t in flpTimers.Controls)
+            {
+                t.Stop();
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            foreach (TimerControl t in flpTimers.Controls)
+            {
+                t.Reset();
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            flpTimers.Controls.Clear();
         }
     }
 }

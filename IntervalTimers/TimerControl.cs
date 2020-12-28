@@ -78,7 +78,7 @@ namespace IntervalTimers
             lblTime.Text = $"{_Time / 3600:D2}:{_Time % 3600 / 60:D2}:{_Time % 3600 % 60:D2}";
         }
 
-        void ResetTime()
+        private void ResetTime()
         {
             _Time = _StartTime;
             UpdateTimeLabel();
@@ -87,6 +87,23 @@ namespace IntervalTimers
         {
             await Task.Run(() => alarm.Play());
             ResetTime();
+        }
+        //Public Exposed Methods*******************************************************************
+        public void Start()
+        {
+            timer1.Start();
+        }
+        public void Stop()
+        {
+            timer1.Stop();
+        }
+        public void Reset()
+        {
+            ResetTime();
+        }
+        public void Close()
+        {
+            E_CloseControl(this);
         }
     }
 }
