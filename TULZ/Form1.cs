@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IntervalTimers;
 
 namespace TULZ
 {
@@ -15,12 +16,13 @@ namespace TULZ
         int mov;
         int movX;
         int movY;
-        
 
+        IntervalTimersControl _interval;
         public panelSideMenu()
         {
             InitializeComponent();
             InitializeMenus();
+            _interval = new IntervalTimersControl();
         }
 
         private void InitializeMenus()
@@ -91,6 +93,13 @@ namespace TULZ
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnIntervalTimer_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            _interval.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(_interval);
         }
         //----------------------------------------------------------------------------------------------------
     }
