@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Media;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace IntervalTimers
 {
@@ -14,7 +15,7 @@ namespace IntervalTimers
     {
         int _StartTime; //inital time at creation of control
         int _Time;      //current time being counted down
-        SoundPlayer alarm;
+        SoundPlayer alarm; // stream of alarm sound
         public Stream _CustomSountPath
         {
             set
@@ -27,7 +28,7 @@ namespace IntervalTimers
                     E_CloseControl(this);
                 }
             }
-        }
+        } //sets the alarm sound
         public event Action<TimerControl> E_CloseControl; //used to remove the control from the host form
         public TimerControl(int hours, int minutes, int seconds)
         {
@@ -48,8 +49,7 @@ namespace IntervalTimers
             if(_Time == 0)
             {
                 //PlayAlarm
-                alarm.Play();
-                ResetTime();
+                PlayAlarmAsync();
             }
         }
         //ButtonClicks******************************************************************************
@@ -73,14 +73,20 @@ namespace IntervalTimers
             E_CloseControl(this);
         }
         //Misc**************************************************************************************
-        void UpdateTimeLabel()
+        private void UpdateTimeLabel()
         {
-            lblTime.Text = $"{_Time/3600}:{(_Time % 3600) / 60}:{((_Time % 3600) % 60)}";
+            lblTime.Text = $"{_Time / 3600:D2}:{_Time % 3600 / 60:D2}:{_Time % 3600 % 60:D2}";
         }
+
         void ResetTime()
         {
             _Time = _StartTime;
             UpdateTimeLabel();
+        }
+        private async void PlayAlarmAsync()
+        {
+            await Task.Run(() => alarm.Play());
+            ResetTime();
         }
     }
 }
