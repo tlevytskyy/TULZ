@@ -140,7 +140,6 @@ namespace IntervalTimers
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpTimers.AutoScroll = true;
             this.flpTimers.BackColor = System.Drawing.Color.Black;
-            this.flpTimers.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpTimers.Location = new System.Drawing.Point(5, 6);
             this.flpTimers.Name = "flpTimers";
             this.flpTimers.Size = new System.Drawing.Size(426, 164);

@@ -12,12 +12,10 @@ namespace TULZ
 {
     public partial class Form1 : Form
     {
-        testform test;
+        
         public Form1()
         {
             InitializeComponent();
-            test = new testform();
-            test.Show();
         }
 
     }
