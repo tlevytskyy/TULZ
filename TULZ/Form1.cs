@@ -109,6 +109,14 @@ namespace TULZ
             else
                 this.WindowState = FormWindowState.Normal;
         }
+
+        private void btnBasic_Click(object sender, EventArgs e)
+        {
+            var temp = new BasicTimerControl();
+            temp.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(temp);
+        }
         //----------------------------------------------------------------------------------------------------
     }
 }

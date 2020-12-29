@@ -16,6 +16,8 @@ namespace IntervalTimers
         int _StartTime; //inital time at creation of control
         int _Time;      //current time being counted down
         SoundPlayer alarm; // stream of alarm sound
+        private int _increment;     //determines if the clock is incremented up or down
+        bool _repeat;   //timers runs in a loop if true
         public Stream _CustomSountPath
         {
             set
@@ -30,20 +32,32 @@ namespace IntervalTimers
             }
         } //sets the alarm sound
         public event Action<TimerControl> E_CloseControl; //used to remove the control from the host form
+
+        public TimerControl()
+        {
+            InitializeComponent();
+            alarm = new SoundPlayer(Properties.Resources.Alarm2);
+            _StartTime = _Time = 0;
+            UpdateTimeLabel();
+            _increment = 1;
+            _repeat = false;
+            
+        }
         public TimerControl(int hours, int minutes, int seconds)
         {
             InitializeComponent();
             alarm = new SoundPlayer(Properties.Resources.Alarm2);
             _StartTime = _Time = (hours * 3600) + (minutes * 60) + seconds;
             UpdateTimeLabel();
+            _increment = -1;
             timer1.Start();
-            
-            
+
+
         }
         //timer*************************************************************************************
         private void timer1_Tick(object sender, EventArgs e)
         {
-            _Time--;
+            _Time += _increment;
             UpdateTimeLabel();
 
             if(_Time == 0)
@@ -86,7 +100,7 @@ namespace IntervalTimers
         private async void PlayAlarmAsync()
         {
             await Task.Run(() => alarm.Play());
-            ResetTime();
+            if(_repeat) ResetTime();
         }
         //Public Exposed Methods*******************************************************************
         public void Start()

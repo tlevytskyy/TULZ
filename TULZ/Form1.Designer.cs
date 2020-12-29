@@ -82,7 +82,7 @@ namespace TULZ
             this.panelTimerSubMenu.Location = new System.Drawing.Point(0, 126);
             this.panelTimerSubMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelTimerSubMenu.Name = "panelTimerSubMenu";
-            this.panelTimerSubMenu.Size = new System.Drawing.Size(140, 72);
+            this.panelTimerSubMenu.Size = new System.Drawing.Size(140, 79);
             this.panelTimerSubMenu.TabIndex = 2;
             // 
             // btnBasic
@@ -92,15 +92,16 @@ namespace TULZ
             this.btnBasic.FlatAppearance.BorderSize = 0;
             this.btnBasic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBasic.ForeColor = System.Drawing.Color.Black;
-            this.btnBasic.Location = new System.Drawing.Point(0, 44);
+            this.btnBasic.Location = new System.Drawing.Point(0, 53);
             this.btnBasic.Margin = new System.Windows.Forms.Padding(2);
             this.btnBasic.Name = "btnBasic";
             this.btnBasic.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnBasic.Size = new System.Drawing.Size(140, 22);
+            this.btnBasic.Size = new System.Drawing.Size(140, 26);
             this.btnBasic.TabIndex = 2;
             this.btnBasic.Text = "Basics";
             this.btnBasic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBasic.UseVisualStyleBackColor = false;
+            this.btnBasic.Click += new System.EventHandler(this.btnBasic_Click);
             // 
             // btnCascadingTimer
             // 
@@ -109,11 +110,11 @@ namespace TULZ
             this.btnCascadingTimer.FlatAppearance.BorderSize = 0;
             this.btnCascadingTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCascadingTimer.ForeColor = System.Drawing.Color.Black;
-            this.btnCascadingTimer.Location = new System.Drawing.Point(0, 20);
+            this.btnCascadingTimer.Location = new System.Drawing.Point(0, 27);
             this.btnCascadingTimer.Margin = new System.Windows.Forms.Padding(2);
             this.btnCascadingTimer.Name = "btnCascadingTimer";
             this.btnCascadingTimer.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnCascadingTimer.Size = new System.Drawing.Size(140, 24);
+            this.btnCascadingTimer.Size = new System.Drawing.Size(140, 26);
             this.btnCascadingTimer.TabIndex = 1;
             this.btnCascadingTimer.Text = "Cascading Timer";
             this.btnCascadingTimer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,7 +131,7 @@ namespace TULZ
             this.btnIntervalTimer.Margin = new System.Windows.Forms.Padding(2);
             this.btnIntervalTimer.Name = "btnIntervalTimer";
             this.btnIntervalTimer.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnIntervalTimer.Size = new System.Drawing.Size(140, 20);
+            this.btnIntervalTimer.Size = new System.Drawing.Size(140, 27);
             this.btnIntervalTimer.TabIndex = 0;
             this.btnIntervalTimer.Text = "Interval ";
             this.btnIntervalTimer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
