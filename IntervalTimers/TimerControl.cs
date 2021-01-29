@@ -27,7 +27,7 @@ namespace IntervalTimers
                 if (!alarm.IsLoadCompleted)
                 {
                     MessageBox.Show("Error Loading File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    E_CloseControl(this);
+                    if (E_CloseControl != null) E_CloseControl(this);
                 }
             }
         } //sets the alarm sound
@@ -43,7 +43,7 @@ namespace IntervalTimers
             _repeat = false;
             
         }
-        public TimerControl(int hours, int minutes, int seconds)
+        public TimerControl(int hours, int minutes, int seconds,bool repeat)
         {
             InitializeComponent();
             alarm = new SoundPlayer(Properties.Resources.Alarm2);
@@ -51,8 +51,7 @@ namespace IntervalTimers
             UpdateTimeLabel();
             _increment = -1;
             timer1.Start();
-
-
+            _repeat = repeat;
         }
         //timer*************************************************************************************
         private void timer1_Tick(object sender, EventArgs e)
@@ -84,7 +83,7 @@ namespace IntervalTimers
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            E_CloseControl(this);
+            if (E_CloseControl != null) E_CloseControl(this);
         }
         //Misc**************************************************************************************
         private void UpdateTimeLabel()
@@ -97,10 +96,18 @@ namespace IntervalTimers
             _Time = _StartTime;
             UpdateTimeLabel();
         }
+        private void ResetTimeStop()
+        {
+            _Time = _StartTime;
+            UpdateTimeLabel();
+            timer1.Stop();
+        }
         private async void PlayAlarmAsync()
         {
             await Task.Run(() => alarm.Play());
-            if(_repeat) ResetTime();
+            if (_repeat) ResetTime();
+            else ResetTimeStop();
+            
         }
         //Public Exposed Methods*******************************************************************
         public void Start()
@@ -117,7 +124,7 @@ namespace IntervalTimers
         }
         public void Close()
         {
-            E_CloseControl(this);
+            if (E_CloseControl != null) E_CloseControl(this);
         }
     }
 }
